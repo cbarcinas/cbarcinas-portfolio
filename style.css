@@ -14,7 +14,7 @@ body {
 .wrapper {
     max-width: calc(960px + 2rem);
     margin: 0 auto;
-    padding: 0 1em;
+    padding: 0 1rem;
 }
 
 h2 {
@@ -28,31 +28,13 @@ h2 {
     letter-spacing: .3em;
 }
 
-/* Utility Classes */
+/*======= Utility Classes =======*/
 
-.heading-sm {
-    font-size: 2rem;
-    text-transform: uppercase;
+/* ====== Header Section =======*/
+
+header {
+    margin: 0 auto;
 }
-
-.heading-md {
-    font-size: 4rem;
-    text-transform: uppercase;
-}
-
-.heading-lg {
-    font-size: 10rem;
-    text-transform: uppercase;
-}
-
-.heading-xl {
-    font-size: 13.5rem;
-    text-transform: uppercase;
-}
-
-
-/* Header Section */
-
 
 header h1 {
     font-size: 2rem;
@@ -114,7 +96,7 @@ header p {
     background-color: rgb(240, 188, 136);
     transform: scaleX(0);
     transform-origin: 0 50%;
-    transition: transform 0.3s ease-out;
+    transition: transform 0.1s ease-out;
     border-radius: .4em;
 }
 
@@ -131,7 +113,7 @@ header p {
     color: black;
 }
 
-/* About Section */
+/*========= About Section ========*/
 
 .about-text {
     color: rgb(240, 188, 136);
@@ -143,18 +125,7 @@ header p {
     margin-bottom: 4em;
 }
 
-/* Projects */
-
-/* .projects h2 {
-    font-size: 1.1rem;
-    text-transform: uppercase;
-    margin-top: 2.3em;
-    margin-bottom: 1.5em;
-    color: #fff;
-    width: 100%;
-    font-weight: 500;
-    letter-spacing: 1.5px;
-} */
+/*======== Projects Section ========*/
 
 .section_grid {
     list-style: none;
@@ -168,14 +139,23 @@ header p {
     text-decoration: none;
 }
 
-.section_grid_image-wrapper {
-    overflow: hidden;
-}
-
 .section_grid_image {
     display: block;
     opacity: 1;
     width: 100%;
+    border-radius: .7rem;
+}
+
+.section_grid_image-wrapper {
+    overflow: hidden;
+    transition: all .2s ease-in-out;
+    border-radius: .7rem;
+}
+
+.section_grid_image-wrapper:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 0px 4px 2px rgb(251, 234, 217);
+    border-radius: .7rem;
 }
 
 .section_grid_item {
@@ -185,29 +165,70 @@ header p {
 .section_grid_item-title {
     color: rgb(240, 188, 136);
     display: inline-block;
-    /* margin-left: .2em; */
-    /* position: relative; */
-    /* vertical-align: top; */
-    overflow: hidden;
-    margin: 1em 0 .2em;
+    /* overflow: hidden; */
+    margin: .5em 0 .2em;
     font-size: 1rem;
     letter-spacing: 1px;
-    padding: .3rem;
+    padding: .5rem;
     letter-spacing: .1rem;
     cursor: pointer;
 }
 
-/*======= Media Queries ======*/
+/* ======= Contact Section ======== */
+
+.contact-section {
+    margin-bottom: 3rem;
+}
+.social-icon-list {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 3rem 0;
+}
+
+.social-icon {
+    display: inline-block;
+    width: 80px;
+    height: 62px; 
+}
+
+.github-svg {
+    background: url(./icons/github-sign.svg);
+    background-size: 80px 62px;
+}
+
+.ig-svg {
+    background: url(./icons/instagram-logo.svg);
+    background-size: 80px 62px;
+}
+
+.linkedin-svg {
+    background: url(./icons/linkedin-logo.svg);
+    background-size: 80px 62px;
+}
+
+/*========= Media Queries ========*/
+
 @media (max-width: 770px) {
     body, html {
         font-size: 91%;
         text-align: center;
     }
+    .social-icon-list {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
 }
     
-@media (max-width:375px ) {
+@media (max-width:380px ) {
     /* fixes issue: nav was causing content to break at smal viewport width, add hamburger */
     html, body {
         font-size: 80%; 
     }
-}
+    .wrapper {
+        width: 95%;
+    } 
+} 
