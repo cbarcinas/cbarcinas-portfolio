@@ -213,6 +213,7 @@ header p {
   html {
     font-size: 91%;
     text-align: center;
+    margin: 0 auto;
   }
   .social-icon-list {
     display: flex;
@@ -226,9 +227,6 @@ header p {
   html,
   body {
     font-size: 80%;
-  }
-  .wrapper {
-    width: 95%;
     margin: 0 auto;
   }
 }
